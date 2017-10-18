@@ -8,6 +8,7 @@
 #ifndef NEURON_H_
 #define NEURON_H
 
+#include<iostream>
 #include<vector>
 
 namespace nn {
@@ -15,15 +16,16 @@ namespace nn {
 class Neuron {
 
 private:
-	int output;
-	int error;
-	std::vector<int> weights;
-	void activate(const std::vector<int> input);
+	float output;
+	float error;
+	std::vector<float> weights;
 
 public:
 	Neuron();
 	virtual ~Neuron();
-
+	void activate(const std::vector<float> input);
+	void write();
+	void initWeights(unsigned int numWeights, float weight);
 };
 
 } /* namespace nn */

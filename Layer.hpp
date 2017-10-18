@@ -8,7 +8,9 @@
 #ifndef LAYER_HPP_
 #define LAYER_HPP_
 
+#include<iostream>
 #include<vector>
+#include<string>
 #include "Neuron.hpp"
 
 namespace nn {
@@ -16,13 +18,20 @@ namespace nn {
 class Layer {
 
 private:
-	std::vector<int> input;
-	std::vector<int> output;
+	unsigned int numNeurons;
+	std::vector<float> input;
+	std::vector<float> output;
 	std::vector<Neuron> neurons;
 
 public:
-	Layer();
+	Layer(unsigned int nNeurons);
 	virtual ~Layer();
+	void setInput(std::vector<float> in);
+	void activate();
+	unsigned int size();
+	void write();
+	std::vector<Neuron> getNeurons();
+	void initWeights(unsigned int numWeights, float weight);
 };
 
 } /* namespace nn */

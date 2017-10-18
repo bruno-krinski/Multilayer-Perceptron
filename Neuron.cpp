@@ -18,10 +18,28 @@ Neuron::~Neuron() {
 
 }
 
-void Neuron::activate(const std::vector<int> input){
+void setWeights(){
+
+}
+
+void Neuron::activate(const std::vector<float> input){
 	weights.resize(input.size(),0);
 	// call activation function and calc the error
 
+}
+
+void Neuron::write(){
+	std::cout << "Output = " << output << std::endl;
+	std::cout << "Error = " << error << std::endl;
+	std::cout << "Weights = [";
+	for(auto i:weights){
+		std::cout << i << ',';
+	}
+	std::cout << "]" << std::endl;
+}
+
+void Neuron::initWeights(unsigned int numWeights, float weight){
+	weights.resize(numWeights, weight);
 }
 
 } /* namespace nn */
