@@ -6,7 +6,7 @@
  */
 
 #ifndef NEURON_H_
-#define NEURON_H
+#define NEURON_H_
 
 #include<iostream>
 #include<vector>
